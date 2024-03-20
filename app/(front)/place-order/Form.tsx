@@ -21,6 +21,8 @@ const Form = () => {
     clear,
   } = useCartService()
 
+  // 1. extract Order Data from `/api/orders/mine`
+  // then send the data to api/orders in order to Place Order
   const { trigger: placeOrder, isMutating: isPlacing } = useSWRMutation(
     `/api/orders/mine`,
     async (url) => {
