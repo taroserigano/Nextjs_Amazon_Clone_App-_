@@ -15,6 +15,12 @@ export default function OrderDetails({
   orderId: string
   paypalClientId: string
 }) {
+
+  // 1. get order ID data, 
+  // 2. create trigger (deliverOrder) action 
+  // 3. using the order data from the specific Order[id], 
+  // send the PUT request to order[id]'s delivery info endPoint 
+  // 4. Add all of the above function to the "Mark as Delivered" button 
   const { trigger: deliverOrder, isMutating: isDelivering } = useSWRMutation(
     `/api/orders/${orderId}`,
     async (url) => {
